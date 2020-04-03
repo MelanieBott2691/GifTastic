@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GIPHY API</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+
+<body>
+    <!-- jumbotron to hold header -->
+    <div class="jumbotron jumbotron-fluid" id="header">
+        <div class="container">
+            <h1 class="display-4">The Office</h1>
+            <p class="lead">"An office is for not dying. An office is a place to live life to the fullest, to the max, to… An office is a place where dreams come true.” – Michael Scott.</p>
+        </div>
+    </div>
+    <!-- action buttons -->
+    <div id="container">
+        <button class="btn btn-primary" id="office" data-search="Michael Scott">Michael Scott</button>
+        <button class="btn btn-primary" id="office" data-search="Jim Halpert">Jim Halpert</button>
+        <button class="btn btn-primary" id="office" data-search="Pam Beesly">Pam Beesly</button>
+        <button class="btn btn-primary" id="office" data-search="Dwight Schrute">Dwight Schrute</button>
+        <button class="btn btn-primary" id="office" data-search="Kevin Malone">Kevin Malone</button>
+        <button class="btn btn-primary" id="office" data-search="Creed Bratton">Creed Bratton</button>
+        <button class="btn btn-primary" id="office" data-search="Oscar Martinez">Oscar Martinez</button>
+        <button class="btn btn-primary" id="office" data-search="Phyllis Vance">Phyllis Vance</button>
+        <button class="btn btn-primary" id="office" data-search="Stanley Hudson">Stanley Hudson</button>
+        <button class="btn btn-primary" id="office" data-search="Charles Miner">Charles Miner</button>
+        <button class="btn btn-primary" id="office" data-search="Holly Flax">Holly Flax</button>
+        <button class="btn btn-primary" id="office" data-search="Deangelo Vickers">Deangelo Vickers</button>
+    </div>
+    <!-- container of rows and columns to hold options -->
+
+    <div class="row">
+        <div class="container">
+            <span><div id="gifArea"></div></span>
+        </div>
+    </div>
+
+
+
+
+    <!-- form area to add new option -->
+    <form class="form-inline" id="officeSearch">
+        <div class="form-group">
+            <label for="officeInput">Search for new Office character: </label>
+            <input type="text" id="officeInput">
+        </div>
+        <!-- Button triggers character to be added -->
+        <input id="addChar" type="submit" value="Submit">
+    </form>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
