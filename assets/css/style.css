@@ -4,15 +4,17 @@
 }
 
 .display-4 {
-    font-size: 7.9vw;
+    font-size: 8vw;
     /* padding-left: 160px; */
 }
 
 .lead {
     font-family: 'Courgette', cursive;
     font-family: 'Satisfy', cursive;
-    font-size: 3.5vh;
+    font-size: 2.0vw;
     line-height: 1.6;
+    vertical-align: middle;
+    border: 2px;
     /* padding-left: 160px;
     padding-right: 160px; */
 }
