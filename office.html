@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GifTastic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/office.css">
+
+    <!-- <link rel="stylesheet" href="assets/style/style.css"> -->
+
+</head>
+
+<body>
+    <div>
+        <div class="jumbotron jumbotron-fluid" id="header">
+            <img id="topImageL" src="assets/images/dfinc.png" width="20%">
+            <img id="topImageR" src="assets/images/dfinc.png" width="20%">
+            <div class="container"></div>
+            <p class="display-4">The Office</p>
+            <p class="lead">"An office is for not dying. An office is a place to live life to the fullest, to the max, to… An office is a place where dreams come true.” – Michael Scott.</p>
+        </div>
+
+        <!-- Form that holds new superhero searches & text -->
+
+        <div class="form-group">
+            <form id="cast-form"><br>
+                <label for="cast-input" id="textOnly">Add The Cast of The Office</label><br>
+                <input type="text" id="cast-input" placeholder="add away...." autocomplete="off"><br>
+
+                <!-- Button triggers new hero to be added -->
+                <input id="add-cast" type="submit" class="btn btn-info mb-2" data-toggle="buttons" value="Submit">
+            </form>
+        </div>
+
+        <div class="container-fluid">
+            <!-- Rendered Buttons will get Dumped Here  -->
+            <div class="row" id="center-buttons">
+                <div class="col">
+                    <div id="buttons-view" value="Refresh Page"></div>
+                </div>
+            </div>
+
+            <!-- Gifs will Get Dumped Here -->
+            <div class="row">
+                <div class="col">
+                    <div id="cast-view"></div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/office.js"></script>
+
+</body>
+
+</html>
