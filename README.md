@@ -3,8 +3,8 @@ Theme: The Office
 
 Array called "topics" created with characters from The Office.
 
-Api key used to retrieve array and added "topics": 
-https://api.giphy.com/v1/gifs/search?q=the+office&api_key=dc6zaTOxFJmzC&limit=10 
+Api key used to retrieve array and added "type": 
+https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=BK7Mc3I93bFbs2sQCX7xQVfK2JcEAQRQ&limit=10
 
 Used a loop that appends a button for each string in the array.
 
@@ -17,3 +17,5 @@ When the user clicks one of the still GIPHY images, the gif animates. If the use
 Under every gif, rating displaed (PG, G, so on).
 
 Form added that takes a value from the user input box and adds it to your topics array. Then make a function call that takes each topic in the array and remakes the buttons on the page.
+
+![GifTastic](assets/images/pageimg.png)
