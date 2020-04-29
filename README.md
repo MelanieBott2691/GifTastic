@@ -23,5 +23,5 @@ Form added that takes a value from the user input box and adds it to your topics
 
 Play and pause animation. Add new tab and display.
 
-[![Watch the video](assets/videos/officeclip.mp4)
+![](assets/videos/officeclip.mp4)
 
