@@ -1,3 +1,5 @@
+/* header container */
+
 .jumbotron {
     height: 400px;
     padding: 60px;
@@ -15,8 +17,6 @@
     line-height: 1.6;
     vertical-align: middle;
     border: 2px;
-    /* padding-left: 160px;
-    padding-right: 160px; */
 }
 
 #topImageR {
@@ -31,7 +31,10 @@
     margin-right: 40px;
 }
 
-.btn {
+
+/* add cast button */
+
+#add-cast {
     border: none;
     background-color: rgb(6, 99, 116);
     padding: 14px 28px;
@@ -41,48 +44,29 @@
     margin: 10px;
 }
 
-.btn:hover {
-    background: rgb(53, 15, 15);
+#add-cast:hover {
+    background: #3c334e;
 }
 
-#office {
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
 
-.form-group {
+/* add cast section */
+
+#office-form {
     float: right;
     clear: both;
     margin-top: 40px;
-    margin-right: 30px;
+    margin-right: 20px;
     text-align: left;
     font-size: 20px;
 }
 
-
-/* #cast-form {
-    float: right;
-    clear: both;
-    margin-top: 50px;
-    margin-right: 30px;
-} */
-
 #add-cast {
-    background-color: rgb(11, 159, 196);
+    background-color: rgb(18, 74, 78);
 }
 
-
-}
-*/ label {
-    vertical-align: right;
-}
-#cast-input:focus {
+#office-input:focus {
     font-size: 14px;
     background-color: khaki;
-    /* width: 100%; */
-    
     padding: 2px;
     margin: 8px 0;
     display: inline-block;
@@ -91,7 +75,72 @@
     box-sizing: border-box;
 }
 
-/* # {
-    font-size: medium;
-    padding: none;
-} */
+body {
+    font: 18px arial, sans-serif;
+    background: #eee;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+button,
+input[type="submit"] {
+    padding: 5px 20px;
+    margin: 0 10px 10px 0;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgb(44, 105, 119);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #bbb;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: #3c334e;
+}
+
+button.active {
+    background: #080822;
+}
+
+td {
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+    height: 40px;
+    width: 25%;
+}
+
+td:first-child {
+    padding-left: 0;
+}
+
+td:last-child {
+    padding-right: 0;
+}
+
+table {
+    width: calc(100% + 30px);
+    table-layout: fixed;
+    border-spacing: 15px 0px;
+    margin: 0px -15px;
+}
+
+.table-container {
+    overflow: hidden;
+    width: 400px;
+    margin: 0 auto;
+}

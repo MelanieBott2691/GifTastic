@@ -23,39 +23,30 @@
 
         <!-- Form that holds new superhero searches & text -->
 
-        <div class="form-group">
-            <form id="cast-form"><br>
-                <label for="cast-input" id="textOnly">Add The Cast of The Office</label><br>
-                <input type="text" id="cast-input" placeholder="add away...." autocomplete="off"><br>
-
-                <!-- Button triggers new hero to be added -->
-                <input id="add-cast" type="submit" class="btn btn-info mb-2" data-toggle="buttons" value="Submit">
-            </form>
-        </div>
-
-        <div class="container-fluid">
-            <!-- Rendered Buttons will get Dumped Here  -->
-            <div class="row" id="center-buttons">
-                <div class="col">
-                    <div id="buttons-view" value="Refresh Page"></div>
-                </div>
-            </div>
-
-            <!-- Gifs will Get Dumped Here -->
-            <div class="row">
-                <div class="col">
-                    <div id="cast-view"></div>
-                </div>
-
-
-            </div>
+        <div id="office-buttons">
 
         </div>
-    </div>
+        <form id="office-form">
+            <label for="office-input">Add The Cast of The Office</label>
+            <input type="text" id="office-input" placeholder="add away...." autocomplete="off"><br>
+            <input id="add-cast" type="submit" value="Submit">
+        </form>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+        <div class="table-container" id="office">
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
 
 </body>
 

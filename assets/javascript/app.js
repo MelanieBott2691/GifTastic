@@ -1,110 +1,93 @@
-$(function() {
-        console.log("page loaded");
+$(document).ready(function() {
+    console.log("page loaded");
 
-    })
-    //call function and load page
+
+
     //array of cast of the office
-var topics = ["Jim Halpert", "Michael Scott", "Dwight Schrute", "Pam Beesly", "Stanley Hudson",
-    "Kevin Malone", "Creed Bratton", "Oscar Martinez", "Holly Flax", "Charles Miner", "Deangelo Vickers"
-];
-// console.log("officeCast");
-//function to display data
+    var office = ["Jim Halpert", "Michael Scott", "Dwight Schrute", "Pam Beesly", "Stanley Hudson",
+        "Kevin Malone", "Creed Bratton", "Oscar Martinez", "Holly Flax", "Charles Miner", "Deangelo Vickers"
+    ];
+    // console.log("officeCast");
+    //function to display data
 
+    //call function and load page
 
-function renderButtons() {
-    console.log("checking");
-    //to prevent repeat buttons
-    $("#buttons-view").empty();
-    var buttonArray = [];
-    //for loop through the array
-    for (var i = 0; i < topics.length; i++) {
-        //cast button options
-        buttonArray[i] = $("<button class='btn btn-info' onclick = 'renderButtons();'>");
-        buttonArray[i].addClass("cast-btn");
-        buttonArray[i].attr("data-name", topics[i]);
-        buttonArray[i].text(topics[i]);
-        $("#buttons-view").prepend(buttonArray[i]);
+    function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
+        $(areaToAddTo).empty();
+
+        for (var i = 0; i < arrayToUse.length; i++) {
+            var a = $("<button>");
+            a.addClass(classToAdd);
+            a.attr("data-type", arrayToUse[i]);
+            a.text(arrayToUse[i]);
+            $(areaToAddTo).append(a);
+        }
     }
-};
 
-function refreshMyPage() {
-    var myDiv = document.getElementById("buttons-view");
-    // myDiv.location.reload();
-}
-// console.log("queryURL");
-//display rating but may delete later
-function displayRatingInfo(obj) {
+    $(document).on("click", ".office-button", function() {
+        $("#office").empty();
+        $("#office-button").removeClass("active");
+        $(this).addClass("active");
 
-    var list = $(obj).attr("data-name");
-    // var list = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topics + "&api_key=BK7Mc3I93bFbs2sQCX7xQVfK2JcEAQRQ&limit=10";
+        var type = $(this).attr("data-type");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=BK7Mc3I93bFbs2sQCX7xQVfK2JcEAQRQ&limit=10";
 
+        $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+            .then(function(response) {
+                var results = response.data;
 
-    console.log("queryURL");
+                for (var i = 0; i < results.length; i++) {
+                    var officeDiv = $("<div class=\"cast-item\">");
 
-    $.ajax({
-        url: queryURL,
-        method: 'GET'
-    }).then(function(response) {
-        var results = response.data;
-        // console.log(results);
+                    var rating = results[i].rating;
 
-        $('#cast-view').empty();
-        for (var i = 0; i < results.length; i++) {
-            //create form to hold cast
-            var castDiv = $("<div class='officeC'>");
-            var rating = results[i].rating;
-            // console.log("rating");
-            var p = $("<p>").text("Rating: " + rating);
-            var castImage = $("<img>");
+                    var p = $("<p>").text("Rating: " + rating);
 
-            castImage.attr("src", results[i].images.fixed_height_still.url);
-            castImage.attr("data-still", results[i].images.fixed_height_still.url);
-            castImage.attr("data-animate", results[i].images.fixed_height.url);
-            castImage.attr("data-state", "still");
-            castImage.attr("class", "pause");
-            castDiv.prepend(p);
-            castDiv.prepend(castImage);
+                    var animated = results[i].images.fixed_height.url;
+                    var still = results[i].images.fixed_height_still.url;
 
-            $("#cast-view").prepend(castDiv);
+                    var officeImage = $("<img>");
+                    officeImage.attr("src", still);
+                    officeImage.attr("data-still", still);
+                    officeImage.attr("data-animate", animated);
+                    officeImage.attr("data-state", "still");
+                    officeImage.addClass("office-image");
 
+                    officeDiv.append(p);
+                    officeDiv.append(officeImage);
 
+                    $("#office").append(officeDiv);
+                }
+            });
+    });
+
+    $(document).on("click", ".office-image", function() {
+
+        var state = $(this).attr("data-state");
+
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
         }
     });
-};
-$("#add-cast").on("click", function(event) {
-    event.preventDefault();
-    var cast = $("#cast-input").val().trim();
-    updateTopics(cast);
+
+    $("#add-cast").on("click", function(event) {
+        event.preventDefault();
+        var newOffice = $("input").eq(0).val();
+
+        if (newOffice.length > 2) {
+            office.push(newOffice);
+        }
+
+        populateButtons(office, "office-button", "#office-buttons");
+
+    });
+
+    populateButtons(office, "office-button", "#office-buttons");
 });
-
-function updateTopics(cast) {
-    var n = topics.indexOf(cast, 0);
-    if (n > -1) {
-        var temp = topics.slice(0, n);
-        var temp2 = topics.slice(n + 1, topics.length);
-        topics = temp.concat(temp2);
-    }
-
-    topics.push(cast);
-    renderButtons();
-    // console.log("renderButtons");
-}
-
-$("#cast-view").on("click", "pause", function() {
-    var state = $(this).attr("data-state");
-    if (state === "still") {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
-    } else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still");
-    }
-});
-
-$(document).on("click", ".cast-btn", function() {
-    var cast = $(this).attr("data-name");
-    updateTopics(cast);
-    displayRatingInfo(this);
-});
-renderButtons();
