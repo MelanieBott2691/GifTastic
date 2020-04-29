@@ -17,6 +17,6 @@ https://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=BK7Mc3I93bFbs2sQCX7x
 #### Features:
 - Play and pause animation. 
 - Add new tab and display.
-
+![](https://melaniebott2691/assets/videos/officeclip.mp4)
 <img src="assets/videos/officeclip.mp4" width="600px">
 
