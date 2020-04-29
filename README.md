@@ -19,7 +19,7 @@ Under every gif, rating displaed (PG, G, so on).
 
 Form added that takes a value from the user input box and adds it to your topics array. Then make a function call that takes each topic in the array and remakes the buttons on the page.
 
-<img src="assets/images/pageimg.png" width="200px">
+<img src="assets/images/pageimg.png" width="600px">
 ![GifTastic](assets/images/pageimg.png)
 
 Play and pause animation. Add new tab and display.
